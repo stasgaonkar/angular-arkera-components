@@ -8,7 +8,6 @@ examples/npm-debug.log
 src/*.js
 src/*.map
 src/*.d.ts
-examples/src/*.js
 examples/src/*.map
 examples/src/*.d.ts
 

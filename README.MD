@@ -18,95 +18,52 @@ To consume the library during development, follow the steps below:
   $ cd angular-arkera-components
   ```
   
-3. Compile the library files:
+3. Install the necessary libraries and compile the library files:
+
   ```
+  $ npm install
   $ npm run build
   ```
   
 4. From the `angular-arkera-components/dist` directory, create a symlink in the global node_modules directory to the `dist` directory of your library:
+
   ```
   $ cd dist
   $ npm link
   ```
   
-5. Create a new Angular app. Or you may choose to use the app in the `angular-arkera-components/examples` folder. Navigate to the this folder:
+5. You can test the components of the library in the sample application that is packed in this project itself. The sample application is available in the  `angular-arkera-components/examples` folder. Navigate to the this folder:
+
   ```
-  $ cd examples  
+  $ cd ../examples  
   ```
   
 6. From the `examples` directory, link the global `angular-arkera-components` directory to node_modules of the `examples` directory:
+  
   ```
   $ npm link angular-arkera-components
   ```
   
-8. Import `ArkeraComponentsModule` in your Angular application. This has already been done for the sample application in `examples` directory.
+7. The main module of the library `ArkeraComponentsModule` has already imported  in `app.module.0.ts`. Similarly the `feed.component` has already been used in  `app.component.0.html`. 
 
-  ```typescript
-  import { BrowserModule } from '@angular/platform-browser';
-  import { NgModule } from '@angular/core';
-  
-  import { AppComponent } from './app.component';
-  
-  // Import your library
-  import { ArkeraComponentsModule } from 'angular-arkera-components';
-  
-  @NgModule({
-    declarations: [
-      AppComponent
-    ],
-    imports: [
-      BrowserModule,
-      
-      // Specify your library as an import
-      ArkeraComponentsModule.forRoot()
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
-  })
-  export class AppModule { }
+8. To run the sample application, install the necessary libraries and start the server as follows:
+
   ```
-
-9. Once the library is imported, you can use its components, directives and pipes in your Angular application templates:
-
-  ```xml
-  <!-- app.component.html -->
-  <h1>{{title}}</h1>
-  <sample-component></sample-component>
-  <ak-feed></ak-feed>
+  $ npm install
+  $ npm start
   ```
   
-  and if you need to access a service from your shared library, you can inject it using Dependency Injection:
-  
-  ```typescript
-  import { Component } from '@angular/core';
-  
-  // Import the shared service
-  import { SampleService } from 'angular-arkera-components';
-  
-  @Component({
-    template: 'Injecting a service from the shared library'
-  })
-  export class HomeComponent {
-  
-    // Inject the service using Angular DI 
-    constructor(private sampleService: SampleService){
-    
-    }
-  
-  }
-  ```
-  
-10. When you make a change to the library, recompile the library files again from the `angular-arkera-components` directory:
+9. When you make a change to the library, recompile the library files again from the `angular-arkera-components` directory:
   ```
   $ npm run build
   ```
     
-11. If you want to automatically recompile the library files when a file in `src` changes, run
+10. If you want to automatically recompile the library files when a file in `src` changes, run
   ```
   $ npm run build:watch
   ```
   
-12. If you are using an Angular CLI application to consume the library, make sure to set up a [path mapping](https://github.com/angular/angular-cli/wiki/stories-linked-library#use-typesscript-path-mapping-for-peer-dependencies) in `/src/tsconfig.app.json` of your consuming application (not your library):
+11. If you are using an Angular CLI application to consume the library, make sure to set up a [path mapping](https://github.com/angular/angular-cli/wiki/stories-linked-library#use-typesscript-path-mapping-for-peer-dependencies) in `/src/tsconfig.app.json` of your consuming application (not your library):
   ```typescript
   {
     "compilerOptions": {
@@ -137,4 +94,4 @@ $ npm run lint
 
 ## License
 
-MIT © [Arkera](mailto:sushil@arkera.ai)
+[Arkera](mailto:sushil@arkera.ai)

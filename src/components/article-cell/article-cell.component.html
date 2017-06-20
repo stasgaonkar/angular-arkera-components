@@ -1,0 +1,16 @@
+<a>
+  <div class="media">
+    <div class="article-summary">
+      <article-read-time [read_time]="getTime()"></article-read-time>
+      <div class="ak-article-title">
+        <p> {{data.title}} </p>
+      </div>
+    </div>
+    <div>
+      <img class="article-image" src="{{data.image_url}}"/>
+    </div>
+    <div class="article-reason">
+      <b> {{data.reason[0].entityName }}</b> WAS MENTIONED IN YOUR READING
+    </div>
+  </div>
+</a>

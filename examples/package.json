@@ -1,0 +1,46 @@
+{
+  "name": "angular-io-example",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Example project from an angular.io guide.",
+  "scripts": {
+    "start": "concurrent \"gulp build\" \"npm run lite\" ",
+    "lite": "lite-server -c=bs-config.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "~4.0.0",
+    "@angular/compiler": "~4.0.0",
+    "@angular/core": "~4.0.0",
+    "@angular/forms": "~4.0.0",
+    "@angular/http": "~4.0.0",
+    "@angular/platform-browser": "~4.0.0",
+    "@angular/platform-browser-dynamic": "~4.0.0",
+    "@angular/router": "~4.0.0",
+    "@angular/upgrade": "~4.0.0",
+    "@types/node": "^6.0.46",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.0.1",
+    "systemjs": "0.19.40",
+    "zone.js": "^0.8.4",
+    "angular-arkera-components": "^0.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.4.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.4.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-typescript": "^3.1.7",
+    "gulp-using": "^0.1.1",
+    "gulp-tslint": "^8.1.1",
+    "lite-server": "^2.3.0",
+    "run-sequence": "^1.2.2",
+    "typescript": "~2.3.4",
+    "tslint": "^5.4.3"
+  },
+  "repository": {}
+}

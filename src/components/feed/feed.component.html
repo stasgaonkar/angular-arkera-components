@@ -1,0 +1,6 @@
+<span *ngIf="articles">
+  <div *ngFor="let data of articles">
+    <ak-article-cell [component_config]="data"></ak-article-cell>
+  </div>
+</span>
+<ak-spinner></ak-spinner>

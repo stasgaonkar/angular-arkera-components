@@ -1,0 +1,69 @@
+.content {
+  position: absolute;
+  top: 0;
+}
+
+.overlay {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.spinner {
+  font-size: 16px;
+  position: relative;
+  display: inline-block;
+  height: 1em;
+  margin-top: 1em;
+}
+
+.spinner.center {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.spinner .spinner-blade {
+  position: absolute;
+  left: 0.4629em;
+  bottom: 0;
+  width: 0.074em;
+  height: 0.2777em;
+  border-radius: 0.0555em;
+  background-color: transparent;
+  -webkit-transform-origin: center -0.2222em;
+  -ms-transform-origin: center -0.2222em;
+  transform-origin: center -0.2222em;
+  -webkit-animation: spinner-fade 1s infinite linear;
+  animation: spinner-fade 1s infinite linear;
+}
+
+$animation-delay: 0s;
+$blade-rotation: 0deg;
+$class-sp: spinner;
+$class-blade: spinner-blade;
+
+@for $i from 1 through 12 {
+  .#{$class-sp} .#{$class-blade}:nth-child(#{$i}) {
+    animation-delay: $animation-delay;
+    transform: rotate($blade-rotation);
+    $blade-rotation: $blade-rotation + 30;
+    $animation-delay: $animation-delay + .083;
+  }
+}
+
+@-webkit-keyframes spinner-fade {
+  0% {
+    background-color: #69717d;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes spinner-fade {
+  0% {
+    background-color: #69717d;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
